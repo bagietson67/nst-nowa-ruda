@@ -1946,10 +1946,10 @@ body { background: #ece2cc; background-image: none; color: #2b2118; }
 a { color: #8e1f16; }
 a:hover { color: #5f130d; }
 ::selection { background: var(--brick); color: #fff; }
-.ticker-bar, .top-bar { background: #5f130d; }
-.ticker-text { color: #f3e6cf; }
-.ticker-text a { color: #ffb3ab; }
-.top-bar a { color: #f3e6cf; }
+.ticker-bar, .top-bar { background: #faf5e9; border-bottom: 2px solid var(--brick); }
+.ticker-text { color: #5c4f3d; }
+.ticker-text a { color: #8e1f16; }
+.top-bar a { color: #5c4f3d; }
 .badge-bip { background: var(--brick-d); }
 .badge-edziennik { background: var(--brick); }
 .site-header { background: #faf5e9; border-bottom: 1px solid #d8c9a8; }
