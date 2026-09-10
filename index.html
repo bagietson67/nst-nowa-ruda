@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Noworudzka Szkoła Techniczna - Strona główna</title>
+	<meta name="description" content="Noworudzka Szkoła Techniczna w Nowej Rudzie - oferta edukacyjna, technikum, szkoła branżowa, wydarzenia, sukcesy uczniów i rekrutacja." />
+	<meta name="keywords" content="Noworudzka Szkoła Techniczna, NST Nowa Ruda, szkoła techniczna, technikum, szkoła branżowa, rekrutacja, Nowa Ruda" />
+	<meta name="author" content="Noworudzka Szkoła Techniczna" />
+	<link rel="shortcut icon" href="images/favicon.ico" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+	<link rel="stylesheet" type="text/css" href="fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="fancybox/style.css" media="screen" />
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="fancybox/jquery.easing-1.3.pack.js"></script>
+	<script type="text/javascript" src="fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+	<script type="text/javascript" src="fancybox/jquery.fancybox-1.3.4.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("a[rel=gallery]").fancybox({
+				'transitionIn': 'elastic',
+				'transitionOut': 'elastic',
+				'titlePosition': 'over'
+			});
+			$(".fancybox").fancybox({
+				'transitionIn': 'elastic',
+				'transitionOut': 'elastic'
+			});
+		});
+
+		function toggleMobileMenu() {
+			var menu = document.getElementById('mobileNav');
+			var toggle = document.querySelector('.mobile-nav-toggle');
+			if (menu) {
+				menu.classList.toggle('open');
+				if (toggle) toggle.setAttribute('aria-expanded', menu.classList.contains('open'));
+			}
+		}
+
+		function updateLiveTime() {
+			var d = new Date();
+			var days = ["Niedziela", "Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota"];
+			var months = ["stycznia", "lutego", "marca", "kwietnia", "maja", "czerwca", "lipca", "sierpnia", "września", "października", "listopada", "grudnia"];
+			var dayName = days[d.getDay()];
+			var day = d.getDate();
+			var month = months[d.getMonth()];
+			var year = d.getFullYear();
+			var hours = d.getHours();
+			var minutes = d.getMinutes();
+			var seconds = d.getSeconds();
+			if (hours < 10) hours = "0" + hours;
+			if (minutes < 10) minutes = "0" + minutes;
+			if (seconds < 10) seconds = "0" + seconds;
+			var timeStr = dayName + ", " + day + " " + month + " " + year + " r.";
+			var heroDate = document.getElementById("heroDate");
+			if (heroDate) heroDate.innerText = timeStr;
+		}
+		window.onload = updateLiveTime;
+	</script>
+</head>
+<body>
+	<a class="skip-link" href="#main-content">Przejdź do głównej treści</a>
+
+	<!-- Top Utility Bar -->
+	<aside class="top-bar ticker-bar" aria-label="Ogłoszenie rekrutacyjne">
+		<div class="top-bar-container">
+			<p class="ticker-text"><strong>Rekrutacja 2026/2027 otwarta</strong><span class="ticker-dot" aria-hidden="true">•</span><a href="https://dolnoslaskie.edu.com.pl/kandydat/app/" target="_blank" rel="noopener">Złóż podanie online &rarr;</a></p>
+			<div class="top-bar-right">
+				<a href="bip/index.html" class="badge-bip" title="Biuletyn Informacji Publicznej">BIP</a>
+				<a href="http://www.edziennik.eu" target="_blank" rel="noopener" class="badge-edziennik" title="Elektroniczny Dziennik Lekcyjny">e-Dziennik</a>
+				<a href="#kontakt" data-modal-open="contact">Kontakt</a>
+				<a href="#mapa-serwisu" data-modal-open="sitemap">Mapa serwisu</a>
+			</div>
+		</div>
+	</aside>
+
+	<!-- Main Site Header -->
+	<header class="site-header">
+		<div class="header-container">
+			<a href="index.html" class="brand" title="Noworudzka Szkoła Techniczna - Strona główna">
+				<div class="brand-logo-icon">NST</div>
+				<div class="brand-text">
+					<h1>Noworudzka Szkoła Techniczna</h1>
+					<p>Nowa Ruda • Tradycja, Nowoczesność, Zawód</p>
+				</div>
+			</a>
+
+			<nav class="desktop-nav" aria-label="Główne menu">
+				<a href="index.html" class="nav-link active">Strona główna</a>
+				<a href="downloads/Oferta%20edukacyjna%202026-27.pdf" target="_blank" class="nav-link">Oferta edukacyjna</a>
+				<a href="https://dolnoslaskie.edu.com.pl/kandydat/app/" target="_blank" rel="noopener" class="nav-link">Rekrutacja</a>
+				<a href="#plan-lekcji" data-modal-open="plan" class="nav-link">Plan lekcji</a>
+				<a href="#wydarzenia" data-modal-open="events" class="nav-link">Wydarzenia</a>
+				<a href="#kontakt" data-modal-open="contact" class="nav-link">Kontakt</a>
+			</nav>
+
+			<button class="mobile-nav-toggle" onclick="toggleMobileMenu()" aria-label="Otwórz menu nawigacji" aria-controls="mobileNav" aria-expanded="false" type="button">
+				&#9776;
+			</button>
+		</div>
+
+		<!-- Mobile Navigation Drawer -->
+		<nav id="mobileNav" class="mobile-nav" aria-label="Menu mobilne">
+			<ul>
+				<li><a href="index.html">Strona główna</a></li>
+				<li><a href="downloads/Oferta%20edukacyjna%202026-27.pdf" target="_blank">Oferta edukacyjna (PDF)</a></li>
+				<li><a href="downloads/Warunki-i-tryb-rekrutacji-2026-27.pdf" target="_blank">Warunki rekrutacji (PDF)</a></li>
+				<li><a href="downloads/ulotka_2025.pdf" target="_blank">Ulotka rekrutacyjna (PDF)</a></li>
+				<li><a href="https://dolnoslaskie.edu.com.pl/kandydat/app/" target="_blank" rel="noopener">Złóż podanie online</a></li>
+				<li><a href="#plan-lekcji" data-modal-open="plan">Plan lekcji</a></li>
+				<li><a href="images/nowe-pracownie/index.html">Nowe pracownie</a></li>
+				<li><a href="#wydarzenia" data-modal-open="events">Wydarzenia</a></li>
+				<li><a href="index.php/index.php%253Foption=com_content&amp;task=blogcategory&amp;id=20&amp;Itemid=37.html">Sport w szkole</a></li>
+				<li><a href="index.php/index.php%253Foption=com_remository&amp;Itemid=106.html">Dokumenty do pobrania</a></li>
+				<li><a href="bip/index.html">Biuletyn Informacji Publicznej (BIP)</a></li>
+				<li><a href="http://www.edziennik.eu" target="_blank" rel="noopener">Elektroniczny Dziennik</a></li>
+				<li><a href="#kontakt" data-modal-open="contact">Kontakt</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Hero editorial ze zdjęciem NST (wycięty środek) -->
+	<section class="hero-section hero-photo hero-wide">
+		<figure class="hero-figure">
+			<img src="images/medium_NST_Panorama.jpg" alt="Budynek Noworudzkiej Szkoły Technicznej" />
+			<figcaption>Budynek NST przy ul. Starej Drodze 4 • <span id="heroDate">rok szkolny 2026/27</span></figcaption>
+		</figure>
+		<div class="hero-content">
+			<p class="hero-eyebrow">Nowa Ruda • Rok szkolny 2026/2027 <span class="hero-stamp">od 1946</span></p>
+			<h2 class="hero-title">Noworudzka Szkoła Techniczna</h2>
+			<p class="hero-subtitle">Technikum i szkoła branżowa. Pracownie zawodowe, praktyki zagraniczne, konkretny zawód.</p>
+			<div class="hero-actions">
+				<a href="downloads/Oferta%20edukacyjna%202026-27.pdf" target="_blank" class="btn btn-primary">Oferta edukacyjna (PDF)</a>
+				<a href="https://dolnoslaskie.edu.com.pl/kandydat/app/" target="_blank" rel="noopener" class="btn btn-ghost">Złóż podanie online</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Pasek kierunków -->
+	<div class="nst-strip" aria-hidden="true"><div class="nst-strip__track"><span>technik elektryk • technik informatyk • technik mechanik • technik pojazdów samochodowych • technik hotelarstwa • technik grafiki i poligrafii cyfrowej • monter stolarki budowlanej • szkoła wielozawodowa • rekrutacja 2026/27 •&nbsp;</span><span>technik elektryk • technik informatyk • technik mechanik • technik pojazdów samochodowych • technik hotelarstwa • technik grafiki i poligrafii cyfrowej • monter stolarki budowlanej • szkoła wielozawodowa • rekrutacja 2026/27 •&nbsp;</span></div></div>
+
+	<!-- Main Content Area with CSS Grid Layout -->
+	<div class="main-wrapper">
+
+		<!-- Sidebar (Left Column on Desktop, Stacked on Mobile) -->
+		<aside class="sidebar">
+
+			<!-- Oferta Edukacyjna -->
+			<div class="sidebar-card">
+				<div class="sidebar-header">
+					<span style="display:inline-flex;align-items:center;">
+						<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:8px;"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5"></path></svg>
+						Oferta edukacyjna
+					</span>
+				</div>
+				<ul class="sidebar-menu">
+					<li><a href="index.php/index.php%253Foption=com_content&amp;task=blogcategory&amp;id=78&amp;Itemid=318.html">Technikum (5-letnie)</a></li>
+					<li><a href="index.php/index.php%253Foption=com_content&amp;task=blogcategory&amp;id=76&amp;Itemid=78.html">Branżowa Szkoła I Stopnia</a></li>
+					<li><a href="downloads/Oferta%20edukacyjna%202026-27.pdf" target="_blank">Oferta edukacyjna (PDF)</a></li>
+					<li><a href="downloads/Warunki-i-tryb-rekrutacji-2026-27.pdf" target="_blank">Warunki i tryb rekrutacji</a></li>
+					<li><a href="downloads/ulotka_2025.pdf" target="_blank">Ulotka rekrutacyjna (PDF)</a></li>
+					<li><a href="https://dolnoslaskie.edu.com.pl/kandydat/app/" target="_blank" rel="noopener">Złóż podanie (kandydat)</a></li>
+					<li><a href="images/nowe-pracownie/index.html">Nowe pracownie zawodowe</a></li>
+					<li><a href="index.php/index.php%253Foption=com_content&amp;task=view&amp;id=615&amp;Itemid=291.html">Film promocyjny szkoły</a></li>
+					<li><a href="index.php/index.php%253Foption=com_content&amp;task=view&amp;id=1410&amp;Itemid=328.html">Biuletyny szkoły</a></li>
+				</ul>
+			</div>
+
+			<!-- Menu Serwisu -->
+			<div class="sidebar-card">
+				<div class="sidebar-header">
+					<span style="display:inline-flex;align-items:center;">
+						<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:8px;"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+						Menu serwisu
+					</span>
+				</div>
+				<ul class="sidebar-menu">
+					<li><a href="index.html" class="active">Strona główna</a></li>
+					<li><a href="#plan-lekcji" data-modal-open="plan">Plan lekcji</a></li>
+					<li><a href="index.php/index.php%253Foption=com_content&amp;task=category&amp;sectionid=9&amp;id=34&amp;Itemid=112.html">Historia szkoły</a></li>
+					<li><a href="#wydarzenia" data-modal-open="events">Wydarzenia</a></li>
+					<li><a href="index.php/index.php%253Foption=com_content&amp;task=view&amp;id=60&amp;Itemid=57.html">Pracownicy szkoły</a></li>
+					<li><a href="index.php/index.php%253Foption=com_content&amp;task=blogcategory&amp;id=57&amp;Itemid=170.html">Uczniowie</a></li>
+					<li><a href="images/nowe-pracownie/index.html">Nowe pracownie zawodowe</a></li>
+					<li><a href="index.php/index.php%253Foption=com_content&amp;task=view&amp;id=42&amp;Itemid=47.html">Biblioteka szkolna</a></li>
+					<li><a href="index.php/index.php%253Foption=com_content&amp;task=blogcategory&amp;id=20&amp;Itemid=37.html">Sport w NST</a></li>
+					<li><a href="index.php/index.php%253Foption=com_remository&amp;Itemid=106.html">Dokumenty i pliki</a></li>
+					<li><a href="index.php/index.php%253Foption=com_content&amp;task=blogcategory&amp;id=42&amp;Itemid=130.html">Konkursy</a></li>
+					<li><a href="index.php/index.php%253Foption=com_content&amp;task=blogcategory&amp;id=63&amp;Itemid=255.html">Szkolny Wolontariat</a></li>
+					<li><a href="index.php/index.php%253Foption=com_content&amp;task=view&amp;id=928&amp;Itemid=306.html">70-lecie - wspomnienia</a></li>
+					<li><a href="index.php/index.php%253Foption=com_content&amp;task=view&amp;id=297&amp;Itemid=225.html">Przydatne linki</a></li>
+					<li><a href="index.php/index.php%253Foption=com_content&amp;task=view&amp;id=1473&amp;Itemid=335.html">Deklaracja dostępności</a></li>
+				</ul>
+			</div>
+
+			<!-- Projekty Edukacyjne -->
+			<div class="sidebar-card">
+				<div class="sidebar-header">
+					<span style="display:inline-flex;align-items:center;">
+						<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:8px;"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+						Projekty unijne
+					</span>
+				</div>
+				<ul class="sidebar-menu">
+					<li><a href="index.php/index.php%253Foption=com_content&amp;task=blogcategory&amp;id=74&amp;Itemid=310.html">Zagraniczna mobilność kadry</a></li>
+					<li><a href="index.php/index.php%253Foption=com_content&amp;task=blogcategory&amp;id=82&amp;Itemid=342.html">Droga do edukacyjnego sukcesu</a></li>
+					<li><a href="index.php/index.php%253Foption=com_content&amp;task=blogcategory&amp;id=83&amp;Itemid=343.html">Wykwalifikowani rzemieślnicy</a></li>
+				</ul>
+			</div>
+
+			<!-- Sonda / Poll -->
+			<div class="sidebar-card">
+				<div class="sidebar-header">
+					<span style="display:inline-flex;align-items:center;">
+						<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:8px;"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+						Sonda
+					</span>
+				</div>
+				<div class="poll-card">
+					<form id="schoolPoll" class="school-poll" novalidate>
+						<p class="poll-question">Jakim kierunkiem z naszej oferty jesteś najbardziej zainteresowany(a)?</p>
+						<div class="poll-options">
+							<label class="poll-option-label"><input type="radio" name="voteid" value="73" /> technik elektryk</label>
+							<label class="poll-option-label"><input type="radio" name="voteid" value="74" /> technik grafiki i poligrafii cyfrowej</label>
+							<label class="poll-option-label"><input type="radio" name="voteid" value="75" /> technik hotelarstwa</label>
+							<label class="poll-option-label"><input type="radio" name="voteid" value="76" /> technik informatyk</label>
+							<label class="poll-option-label"><input type="radio" name="voteid" value="77" /> technik mechanik</label>
+							<label class="poll-option-label"><input type="radio" name="voteid" value="78" /> technik pojazdów samochodowych</label>
+							<label class="poll-option-label"><input type="radio" name="voteid" value="79" /> monter stolarki budowlanej</label>
+							<label class="poll-option-label"><input type="radio" name="voteid" value="80" /> mechanik pojazdów samochodowych</label>
+							<label class="poll-option-label"><input type="radio" name="voteid" value="81" /> szkoła wielozawodowa</label>
+						</div>
+						<div class="poll-actions">
+							<button type="button" id="submitPoll" class="btn btn-primary">Głosuj</button>
+							<button type="button" id="togglePollResults" class="btn btn-secondary">Wyniki</button>
+						</div>
+						<div id="pollFeedback" class="poll-feedback" role="status" aria-live="polite"></div>
+						<div id="pollResults" class="poll-results" hidden></div>
+					</form>
+				</div>
+			</div>
+
+			<!-- Partnerzy & Banery -->
+			<div class="sidebar-card">
+				<div class="sidebar-header">
+					<span style="display:inline-flex;align-items:center;">
+						<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:8px;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+						Partnerzy szkoły
+					</span>
+				</div>
+				<div class="banner-item">
+					<a href="https://pwsz.nysa.pl" target="_blank" rel="noopener" title="PWSZ w Nysie">
+						<img src="images/banners/pwsz-nysa.jpg" alt="PWSZ Nysa" />
+					</a>
+				</div>
+				<div class="banner-item">
+					<a href="https://www.zpas.pl" target="_blank" rel="noopener" title="ZPAS Group">
+						<img src="images/banners/logo-zpas-group.jpg" alt="ZPAS Group" />
+					</a>
+				</div>
+				<div class="banner-item">
+					<a href="#" title="Noworudzianin">
+						<img src="images/banners/noworudzianin.png" alt="Noworudzianin" />
+					</a>
+				</div>
+			</div>
+
+			<!-- Statystyki serwisu -->
+			<div class="sidebar-card">
+				<div class="sidebar-header">
+					<span style="display:inline-flex;align-items:center;">
+						<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:8px;"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+						Statystyki serwisu
+					</span>
+				</div>
+				<div class="stats-box">
+					<div class="stats-item">
+						<span>Goście online:</span>
+						<span class="stats-value">39</span>
+					</div>
+					<div class="stats-item">
+						<span>Liczba odwiedzin:</span>
+						<span class="stats-value">13 716 796</span>
+					</div>
+					<div class="stats-item">
+						<span>Rok szkolny:</span>
+						<span class="stats-value">2026/2027</span>
+					</div>
+				</div>
+			</div>
+
+		</aside>
+
+		<!-- Main Content Area -->
+		<main id="main-content" class="content-area" tabindex="-1">
+
+			<div class="section-header">
+				<h2 class="section-title">
+					<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;margin-right:8px;color:#1e3a8a;"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+					Aktualności ze szkoły
+				</h2>
+			</div>
+
+			<!-- Artykuł 1 -->
+			<article class="article-card">
+				<div class="article-header">
+					<span class="article-category">Uroczystość szkolna</span>
+					<h3 class="article-title">Uroczyste rozpoczęcie roku szkolnego 2026/2027</h3>
+				</div>
+				<div class="article-body">
+					<p>
+						1 września w Noworudzkiej Szkole Technicznej uroczyście rozpoczęto nowy rok szkolny 2026/2027. W szkolnych murach ponownie spotkali się uczniowie, nauczyciele i pracownicy szkoły, a szczególnie serdecznie powitano tych, którzy po raz pierwszy dołączyli do społeczności NST – uczniów klas pierwszych.
+					</p>
+					<p>
+						Podczas uroczystości nie zabrakło słów o nowych wyzwaniach, zadaniach i przedsięwzięciach, które czekają na szkolną społeczność w rozpoczynającym się roku. Dyrektor szkoły Brygida Gąsior podkreśliła, że edukacja to nie tylko zdobywanie wiedzy, ale również kształtowanie charakterów, rozwijanie umiejętności oraz budowanie właściwych relacji między ludźmi.
+					</p>
+					<p>
+						<em>– Rozpoczynający się rok szkolny 2026/2027 to czas wielu zadań oraz nowych przedsięwzięć. Życzę nam wszystkim, aby był to okres, w którym nie zabraknie dobrej współpracy, wzajemnej życzliwości, przyjaznej atmosfery i twórczych inicjatyw –</em> mówiła pani dyrektor.
+					</p>
+					<p>
+						Przed nami kolejny rok pełen nauki, wyzwań, spotkań i nowych doświadczeń. Życzymy całej społeczności Noworudzkiej Szkoły Technicznej, aby był to dobry, bezpieczny i pełen sukcesów rok szkolny!
+					</p>
+				</div>
+			</article>
+
+			<!-- Artykuł 2 -->
+			<article class="article-card">
+				<div class="article-header">
+					<span class="article-category">Wymiana międzynarodowa</span>
+					<h3 class="article-title">Vogtland i my – wspólna przygoda w naszej szkole</h3>
+				</div>
+				<div class="article-body">
+					<p>
+						W dniach 24–25 marca gościliśmy w naszej szkole sześcioro uczniów wraz z dwojgiem opiekunów z zaprzyjaźnionej szkoły Berufliches Schulzentrum Vogtland. Nasi goście zapoznali się z kierunkami kształcenia w NST oraz aktywnie uczestniczyli w zajęciach z elektryki, informatyki, a także w lekcjach sportowych i językowych.
+					</p>
+					<p>
+						Podczas zajęć językowych poznali nasze zwyczaje i obyczaje, mieli także okazję zmierzyć się z językiem polskim, ucząc się jego podstaw. W luźnej i przyjaznej atmosferze uczniowie ćwiczyli polskie łamańce językowe, świetnie się przy tym bawiąc. Goście zostali również zapoznani z przebiegiem konkursów barmańskich.
+					</p>
+					<p>
+						Uczniowie z Niemiec mieli także okazję spróbować polskiej kuchni podczas wycieczek na Górę Św. Anny, Górę Wszystkich Świętych oraz w trakcie zwiedzania fortów w Srebrnej Górze. Dużym zainteresowaniem cieszyła się wizyta w zakładzie ZPAS, gdzie goście poznali główne linie produkcyjne.
+					</p>
+					<div class="article-gallery">
+						<a href="images/wydarzenia-2026/2026-03-30/index.html" class="gallery-thumb" title="Zobacz relację fotograficzną z wizyty gości z Vogtland">
+							<img src="images/wydarzenia-2026/2026-03-30/folderthumb.jpg" alt="Vogtland i my w NST" />
+						</a>
+						<div>
+							<strong>Galeria fotograficzna:</strong><br />
+							<a href="images/wydarzenia-2026/2026-03-30/index.html" class="btn btn-gallery">Otwórz galerię zdjęć &rarr;</a>
+						</div>
+					</div>
+				</div>
+			</article>
+
+			<!-- Artykuł 3 -->
+			<article class="article-card">
+				<div class="article-header">
+					<span class="article-category">Sport szkolny</span>
+					<h3 class="article-title">Futbol Sala – Turniej na hali CTS w Słupcu</h3>
+				</div>
+				<div class="article-body">
+					<p>
+						27 lutego na hali CTS w Słupcu odbył się turniej halowej piłki nożnej. Drużyna dziewcząt NST rozpoczęła rozgrywki bardzo dobrze, wygrywając pierwszy mecz z reprezentacją Bożkowa. Niestety w kolejnym spotkaniu z LO zabrakło odrobiny szczęścia – przeciwniczki zdobyły bramkę w ostatniej minucie meczu.
+					</p>
+					<p>
+						Męska drużyna NST zremisowała swój pierwszy mecz z Bożkowem, natomiast w drugim spotkaniu musiała uznać wyższość drużyny LO. Gratulujemy obu drużynom wielkiego serca do walki!
+					</p>
+					<div class="article-gallery">
+						<a href="images/wydarzenia-2026/2026-03-02/index.html" class="gallery-thumb" title="Zobacz relację fotograficzną z turnieju Futbol Sala">
+							<img src="images/wydarzenia-2026/2026-03-02/folderthumb.jpg" alt="Futbol Sala na hali CTS" />
+						</a>
+						<div>
+							<strong>Fotorelacja z turnieju:</strong><br />
+							<a href="images/wydarzenia-2026/2026-03-02/index.html" class="btn btn-gallery">Zobacz zdjęcia z zawodów &rarr;</a>
+						</div>
+					</div>
+				</div>
+			</article>
+
+			<!-- Artykuł 4 -->
+			<article class="article-card">
+				<div class="article-header">
+					<span class="article-category">Sukcesy uczniów</span>
+					<h3 class="article-title">Mistrzostwa Powiatu Kłodzkiego w Tenisie Stołowym</h3>
+				</div>
+				<div class="article-body">
+					<p>
+						24.02.2026 odbyły się Mistrzostwa Powiatu Kłodzkiego w tenisie stołowym, w których wzięło udział osiem drużyn chłopców oraz siedem drużyn dziewcząt z całego regionu. Rywalizacja była bardzo zacięta, pełna sportowych emocji i doskonałej gry na wysokim poziomie.
+					</p>
+					<p>Reprezentanci Noworudzkiej Szkoły Technicznej spisali się znakomicie:</p>
+					<ul>
+						<li><strong>Drużyna chłopców</strong> (Bartosz Mówiński, Kamil Łata, Mateusz Miśkiewicz) – zdobyła <strong>3. miejsce na podium</strong>!</li>
+						<li><strong>Drużyna dziewcząt</strong> (Natasza Wysocka, Julia Koterba, Nikola Guściora) – wywalczyła <strong>6. miejsce</strong>.</li>
+					</ul>
+					<p>Serdecznie gratulujemy naszym zawodnikom i zawodniczkom świetnego występu, zaangażowania oraz godnego reprezentowania szkoły!</p>
+					<div class="article-gallery">
+						<a href="images/wydarzenia-2026/2026-02-28/index.html" class="gallery-thumb" title="Zobacz relację fotograficzną z mistrzostw tenisa stołowego">
+							<img src="images/wydarzenia-2026/2026-02-28/folderthumb.jpg" alt="Mistrzostwa tenisa stołowego" />
+						</a>
+						<div>
+							<strong>Fotorelacja z mistrzostw:</strong><br />
+							<a href="images/wydarzenia-2026/2026-02-28/index.html" class="btn btn-gallery">Otwórz galerię &rarr;</a>
+						</div>
+					</div>
+				</div>
+			</article>
+
+			<!-- Artykuł 5 -->
+			<article class="article-card">
+				<div class="article-header">
+					<span class="article-category">Sport szkolny</span>
+					<h3 class="article-title">Halówka w NST – turniej halowej piłki nożnej</h3>
+				</div>
+				<div class="article-body">
+					<p>
+						25 lutego w naszej szkole odbył się emocjonujący turniej halowej piłki nożnej. Do rywalizacji przystąpiły zarówno drużyny dziewcząt, jak i chłopców, które z ogromnym zaangażowaniem walczyły o każdy punkt i każdą bramkę.
+					</p>
+					<p>
+						Sportowa atmosfera, duch fair play oraz gorący doping kibiców sprawiły, że wydarzenie dostarczyło wszystkim wielu niezapomnianych emocji. Zawodnicy wykazali się świetną kondycją, umiejętnościami technicznymi oraz doskonałą współpracą zespołową. Gratulujemy wszystkim uczestnikom wspaniałej postawy!
+					</p>
+					<div class="article-gallery">
+						<a href="images/wydarzenia-2026/2026-02-27/index.html" class="gallery-thumb" title="Zobacz relację z turnieju Halówka w NST">
+							<img src="images/wydarzenia-2026/2026-02-27/folderthumb.jpg" alt="Turniej Halówka w NST" />
+						</a>
+						<div>
+							<strong>Zdjęcia z turnieju:</strong><br />
+							<a href="images/wydarzenia-2026/2026-02-27/index.html" class="btn btn-gallery">Galeria zdjęć &rarr;</a>
+						</div>
+					</div>
+				</div>
+			</article>
+
+			<!-- Artykuł 6 -->
+			<article class="article-card">
+				<div class="article-header">
+					<span class="article-category">Praktyki zawodowe</span>
+					<h3 class="article-title">Ruszyła rekrutacja na zagraniczne praktyki zawodowe</h3>
+				</div>
+				<div class="article-body">
+					<p>
+						Rozpoczął się proces naboru uczniów na wyjazdy na praktyki zagraniczne w ramach realizowanych w szkole projektów unijnych. Praktyki zagraniczne to wyjątkowa okazja do zdobycia cennego doświadczenia zawodowego, podniesienia kompetencji językowych oraz poznania europejskich rynków pracy.
+					</p>
+					<p>Prosimy uczniów o zapoznanie się ze szczegółowym regulaminem rekrutacji i terminowe składanie podań w sekretariacie szkoły.</p>
+					<div class="article-gallery">
+						<a href="images/wydarzenia-2026/2026-01-27/1.jpg" rel="gallery" class="gallery-thumb" title="Praktyki zagraniczne - plakat 1">
+							<img src="images/wydarzenia-2026/2026-01-27/1.jpg" alt="Praktyki zagraniczne 1" />
+						</a>
+						<a href="images/wydarzenia-2026/2026-01-27/2.jpg" rel="gallery" class="gallery-thumb" title="Praktyki zagraniczne - plakat 2">
+							<img src="images/wydarzenia-2026/2026-01-27/2.jpg" alt="Praktyki zagraniczne 2" />
+						</a>
+						<a href="images/wydarzenia-2026/2026-01-27/3.jpg" rel="gallery" class="gallery-thumb" title="Praktyki zagraniczne - plakat 3">
+							<img src="images/wydarzenia-2026/2026-01-27/3.jpg" alt="Praktyki zagraniczne 3" />
+						</a>
+					</div>
+				</div>
+			</article>
+
+
+<section id="newsArchive" class="news-archive" aria-live="polite" hidden></section>
+			<!-- Paginacja -->
+			<nav class="pagination-container" aria-label="Nawigacja po stronach aktualności">
+  <button class="page-btn active" type="button" data-news-page="1" aria-current="page">1</button>
+  <button class="page-btn" type="button" data-news-page="2">2</button>
+  <button class="page-btn" type="button" data-news-page="3">3</button>
+</nav>
+
+			<!-- Moduły Nowości i Popularne w siatce 2-kolumnowej -->
+			<div class="dual-module-grid">
+				<div class="info-card">
+					<h4 class="info-card-title">Najnowsze wpisy</h4>
+					<ul class="info-card-list">
+						<li><a href="index.php/index.php%253Foption=com_content&amp;task=view&amp;id=1777&amp;Itemid=1.html">Uroczyste rozpoczęcie roku szkolnego 2026/2027</a></li>
+						<li><a href="index.php/index.php%253Foption=com_content&amp;task=view&amp;id=1774&amp;Itemid=1.html">Na 3 dni do Warszawy!</a></li>
+						<li><a href="index.php/index.php%253Foption=com_content&amp;task=view&amp;id=1773&amp;Itemid=1.html">Vogtland i my – wspólna przygoda w szkole</a></li>
+						<li><a href="index.php/index.php%253Foption=com_content&amp;task=view&amp;id=1772&amp;Itemid=345.html">Główne informacje</a></li>
+						<li><a href="index.php/index.php%253Foption=com_content&amp;task=view&amp;id=1771&amp;Itemid=1.html">Konkurs barmański w NST</a></li>
+					</ul>
+				</div>
+
+				<div class="info-card">
+					<h4 class="info-card-title">Najczęściej czytane</h4>
+					<ul class="info-card-list">
+						<li><a href="index.php/index.php%253Foption=com_content&amp;task=view&amp;id=109&amp;Itemid=1.html">O Noworudzkiej Szkole Technicznej</a></li>
+						<li><a href="index.php/index.php%253Foption=com_content&amp;task=view&amp;id=170&amp;Itemid=1.html">Klub Absolwenta NST</a></li>
+						<li><a href="index.php/index.php%253Foption=com_content&amp;task=view&amp;id=147&amp;Itemid=1.html">Zdjęcia klasowe i kronika szkolna</a></li>
+						<li><a href="index.php/index.php%253Foption=com_content&amp;task=view&amp;id=352&amp;Itemid=1.html">Dzień Edukacji Narodowej w NST</a></li>
+						<li><a href="index.php/index.php%253Foption=com_content&amp;task=view&amp;id=129&amp;Itemid=1.html">Jubileusz szkoły – kronika wspomnień</a></li>
+					</ul>
+				</div>
+			</div>
+
+		</main>
+
+	</div>
+
+	<!-- Modern Responsive Footer -->
+	<footer class="site-footer">
+		<div class="nst-wordmark" aria-hidden="true">NST<span>.</span></div>
+		<div class="footer-container">
+			<div class="footer-col">
+				<h3>Noworudzka Szkoła Techniczna</h3>
+				<p>
+					Szkoła z bogatą tradycją kształcenia technicznego i branżowego. Przygotowujemy wykwalifikowanych specjalistów poszukiwanych na nowoczesnym rynku pracy w Polsce i za granicą.
+				</p>
+				<p>
+					<strong>Adres:</strong> ul. Stara Droga 4, 57-400 Nowa Ruda<br />
+					<strong>Telefon:</strong> 74 872 23 88 | <strong>E-mail:</strong> sekretariat@zsp.nowaruda.pl
+				</p>
+				<div class="footer-badges">
+					<img src="images/ikonki/button_xhtml.png" alt="W3C XHTML" title="W3C XHTML Valid" />
+					<img src="images/ikonki/button_css.png" alt="W3C CSS" title="W3C CSS Valid" />
+					<img src="images/ikonki/button_apache.png" alt="Apache" title="Apache Web Server" />
+					<img src="images/ikonki/button_php.png" alt="PHP" title="PHP Technology" />
+					<img src="images/ikonki/button_mysql.png" alt="MySQL" title="MySQL Database" />
+					<img src="images/ikonki/button_firefox.png" alt="Firefox" title="Zoptymalizowano dla nowoczesnych przeglądarek" />
+				</div>
+			</div>
+
+			<div class="footer-col">
+				<h3>Dla Kandydatów</h3>
+				<ul class="footer-links">
+					<li><a href="downloads/Oferta%20edukacyjna%202026-27.pdf" target="_blank">Kierunki kształcenia (PDF)</a></li>
+					<li><a href="downloads/Warunki-i-tryb-rekrutacji-2026-27.pdf" target="_blank">Zasady rekrutacji</a></li>
+					<li><a href="downloads/ulotka_2025.pdf" target="_blank">Ulotka informacyjna</a></li>
+					<li><a href="https://dolnoslaskie.edu.com.pl/kandydat/app/" target="_blank" rel="noopener">Elektroniczny nabór</a></li>
+					<li><a href="images/nowe-pracownie/index.html">Nasze pracownie</a></li>
+				</ul>
+			</div>
+
+			<div class="footer-col">
+				<h3>Przydatne Linki</h3>
+				<ul class="footer-links">
+					<li><a href="bip/index.html">Biuletyn Informacji Publicznej (BIP)</a></li>
+					<li><a href="http://www.edziennik.eu" target="_blank" rel="noopener">Dziennik Elektroniczny</a></li>
+					<li><a href="#plan-lekcji" data-modal-open="plan">Plan lekcji</a></li>
+					<li><a href="index.php/index.php%253Foption=com_remository&amp;Itemid=106.html">Regulaminy i dokumenty</a></li>
+					<li><a href="index.php/index.php%253Foption=com_content&amp;task=view&amp;id=1473&amp;Itemid=335.html">Deklaracja dostępności</a></li>
+					<li><a href="#kontakt" data-modal-open="contact">Sekretariat i dyrekcja</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="footer-bottom">
+			<p>&copy; Noworudzka Szkoła Techniczna. Wszystkie prawa zastrzeżone. Projekt zoptymalizowany dla urządzeń mobilnych i komputerów.</p>
+		</div>
+	</footer>
+
+
+<div class="scroll-progress" aria-hidden="true"><span class="scroll-progress__bar"></span></div>
+<script>
+  (function () {
+    var bar = document.querySelector('.scroll-progress__bar');
+    var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function updateProgress() {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      var progress = max > 0 ? window.scrollY / max : 0;
+      if (bar) bar.style.transform = 'scaleX(' + Math.min(1, Math.max(0, progress)) + ')';
+    }
+    updateProgress();
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('resize', updateProgress);
+    if (reducedMotion || !('IntersectionObserver' in window)) return;
+    document.body.classList.add('scroll-effects-ready');
+    var elements = document.querySelectorAll('.section-header, .article-card, .sidebar-card, .dual-module-grid, .pagination-container');
+    elements.forEach(function (element) { element.classList.add('scroll-reveal'); });
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        entry.target.classList.toggle('is-visible', entry.isIntersecting);
+      });
+    }, { threshold: .08, rootMargin: '0px 0px -24px' });
+    elements.forEach(function (element) { observer.observe(element); });
+  }());
+</script>
+
+<script>
+  (function () {
+    var form = document.getElementById('schoolPoll');
+    if (!form) return;
+    var submit = document.getElementById('submitPoll');
+    var resultsButton = document.getElementById('togglePollResults');
+    var feedback = document.getElementById('pollFeedback');
+    var results = document.getElementById('pollResults');
+    var storageKey = 'nst-school-poll-v1';
+    var choices = Array.prototype.slice.call(form.querySelectorAll('input[name="voteid"]'));
+
+    function selectedChoice() { return choices.filter(function (choice) { return choice.checked; })[0]; }
+    function choiceLabel(choice) { return choice ? choice.parentNode.textContent.replace(/^\s+|\s+$/g, '') : ''; }
+    function savedChoice() { try { return localStorage.getItem(storageKey); } catch (error) { return null; } }
+    function setSavedChoice(value) { try { localStorage.setItem(storageKey, value); return true; } catch (error) { return false; } }
+    function renderResult(choice) {
+      results.innerHTML = '';
+      if (!choice) { results.textContent = 'Zagłosuj, aby zobaczyć zapisany wynik na tym urządzeniu.'; return; }
+      var title = document.createElement('strong'); title.textContent = 'Twój zapisany głos';
+      var label = document.createElement('span'); label.textContent = choiceLabel(choice);
+      var bar = document.createElement('span'); bar.className = 'poll-result-bar';
+      var fill = document.createElement('i'); fill.style.width = '100%'; bar.appendChild(fill);
+      results.appendChild(title); results.appendChild(label); results.appendChild(bar);
+    }
+    function activateSavedVote(value) {
+      var choice = choices.filter(function (item) { return item.value === value; })[0];
+      if (!choice) return;
+      choice.checked = true;
+      choices.forEach(function (item) { item.disabled = true; });
+      submit.disabled = true; submit.textContent = 'Głos zapisany';
+      feedback.textContent = 'Dziękujemy. Twój głos został zapisany na tym urządzeniu.';
+      renderResult(choice);
+    }
+    var saved = savedChoice();
+    if (saved) activateSavedVote(saved);
+    submit.addEventListener('click', function () {
+      var choice = selectedChoice();
+      if (!choice) { feedback.textContent = 'Wybierz najpierw jeden kierunek.'; feedback.classList.add('is-warning'); return; }
+      if (setSavedChoice(choice.value)) { feedback.classList.remove('is-warning'); activateSavedVote(choice.value); results.hidden = false; }
+      else { feedback.textContent = 'Nie można zapisać głosu w tej przeglądarce.'; feedback.classList.add('is-warning'); }
+    });
+    resultsButton.addEventListener('click', function () { results.hidden = !results.hidden; resultsButton.setAttribute('aria-expanded', String(!results.hidden)); });
+  }());
+</script>
+
+<section id="plan-lekcji" class="app-modal" role="dialog" aria-modal="true" aria-labelledby="planTitle" hidden>
+  <div class="app-modal__backdrop" data-modal-close></div>
+  <div class="app-modal__panel" role="document">
+    <button type="button" class="app-modal__close" data-modal-close aria-label="Zamknij panel planu lekcji">×</button>
+    <span class="app-modal__eyebrow">Dla uczniów</span>
+    <h2 id="planTitle">Plan lekcji</h2>
+    <p>Aktualny plan oraz zmiany są publikowane w systemie EduPage. Otwiera się on w nowej karcie, więc nie tracisz tej strony.</p>
+    <div class="app-modal__actions">
+      <a class="btn btn-primary" href="https://nst.edupage.org/timetable/" target="_blank" rel="noopener">Otwórz plan w EduPage ↗</a>
+      <button type="button" class="btn btn-secondary" data-modal-close>Wróć do strony</button>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt" class="app-modal" role="dialog" aria-modal="true" aria-labelledby="contactTitle" hidden>
+  <div class="app-modal__backdrop" data-modal-close></div>
+  <div class="app-modal__panel" role="document">
+    <button type="button" class="app-modal__close" data-modal-close aria-label="Zamknij panel kontaktu">×</button>
+    <span class="app-modal__eyebrow">Jesteśmy w kontakcie</span>
+    <h2 id="contactTitle">Sekretariat szkoły</h2>
+    <dl class="contact-details">
+      <div><dt>Adres</dt><dd>ul. Stara Droga 4, 57-400 Nowa Ruda</dd></div>
+      <div><dt>Telefon</dt><dd><a href="tel:+48748722388">74 872 23 88</a></dd></div>
+      <div><dt>E-mail</dt><dd><a href="mailto:sekretariat@zsp.nowaruda.pl">sekretariat@zsp.nowaruda.pl</a></dd></div>
+    </dl>
+    <div class="app-modal__actions">
+      <a class="btn btn-primary" href="mailto:sekretariat@zsp.nowaruda.pl?subject=Kontakt%20ze%20strony%20NST">Napisz e-mail</a>
+      <a class="btn btn-secondary contact-call" href="tel:+48748722388">Zadzwoń</a>
+    </div>
+  </div>
+</section>
+
+<script>
+  (function () {
+    var currentModal = null;
+    var trigger = null;
+    function closeModal() {
+      if (!currentModal) return;
+      currentModal.hidden = true;
+      document.body.classList.remove('modal-open');
+      if (trigger) trigger.focus();
+      currentModal = null;
+    }
+    document.addEventListener('click', function (event) {
+      var opener = event.target.closest('[data-modal-open]');
+      if (opener) {
+        event.preventDefault();
+        var modalIds = { plan: 'plan-lekcji', contact: 'kontakt', events: 'wydarzenia', sitemap: 'mapa-serwisu' };
+        var modal = document.getElementById(modalIds[opener.getAttribute('data-modal-open')]);
+        if (!modal) return;
+        trigger = opener; currentModal = modal; modal.hidden = false;
+        document.body.classList.add('modal-open');
+        modal.querySelector('.app-modal__close').focus();
+      }
+      if (event.target.closest('[data-modal-close]')) closeModal();
+    });
+    document.addEventListener('keydown', function (event) { if (event.key === 'Escape') closeModal(); });
+  }());
+</script>
+
+<section id="wydarzenia" class="app-modal" role="dialog" aria-modal="true" aria-labelledby="eventsTitle" hidden>
+  <div class="app-modal__backdrop" data-modal-close></div>
+  <div class="app-modal__panel events-panel" role="document">
+    <button type="button" class="app-modal__close" data-modal-close aria-label="Zamknij panel wydarzeń">×</button>
+    <span class="app-modal__eyebrow">Życie szkoły</span>
+    <h2 id="eventsTitle">Wydarzenia</h2>
+    <p>Najświeższe relacje publikujemy na stronie głównej. Poniżej znajdziesz trzy ostatnie galerie.</p>
+    <div class="events-panel__list">
+      <a href="images/wydarzenia-2026/2026-03-30/index.html"><strong>Vogtland i my</strong><span>Wymiana międzynarodowa</span></a>
+      <a href="images/wydarzenia-2026/2026-03-02/index.html"><strong>Futbol Sala</strong><span>Turniej na hali CTS</span></a>
+      <a href="images/wydarzenia-2026/2026-02-28/index.html"><strong>Tenis stołowy</strong><span>Mistrzostwa Powiatu Kłodzkiego</span></a>
+    </div>
+    <div class="app-modal__actions">
+      <a class="btn btn-primary" href="#main-content" data-modal-close>Zobacz aktualności</a>
+      <button type="button" class="btn btn-secondary" data-modal-close>Zamknij</button>
+    </div>
+  </div>
+</section>
+
+<section id="mapa-serwisu" class="app-modal" role="dialog" aria-modal="true" aria-labelledby="sitemapTitle" hidden>
+  <div class="app-modal__backdrop" data-modal-close></div>
+  <div class="app-modal__panel sitemap-panel" role="document">
+    <button type="button" class="app-modal__close" data-modal-close aria-label="Zamknij mapę serwisu">×</button>
+    <span class="app-modal__eyebrow">Nawigacja</span>
+    <h2 id="sitemapTitle">Mapa serwisu</h2>
+    <nav class="sitemap-grid" aria-label="Mapa serwisu">
+      <a href="index.html"><strong>Strona główna</strong><span>Aktualności i najważniejsze informacje</span></a>
+      <a href="#plan-lekcji" data-modal-open="plan"><strong>Plan lekcji</strong><span>Aktualny plan w EduPage</span></a>
+      <a href="#wydarzenia" data-modal-open="events"><strong>Wydarzenia</strong><span>Galerie i relacje szkolne</span></a>
+      <a href="downloads/Oferta%20edukacyjna%202026-27.pdf" target="_blank"><strong>Oferta edukacyjna</strong><span>Informator dla kandydatów (PDF)</span></a>
+      <a href="https://dolnoslaskie.edu.com.pl/kandydat/app/" target="_blank" rel="noopener"><strong>Rekrutacja</strong><span>Elektroniczny nabór</span></a>
+      <a href="#kontakt" data-modal-open="contact"><strong>Kontakt</strong><span>Sekretariat, telefon i e-mail</span></a>
+      <a href="bip/index.html"><strong>BIP</strong><span>Biuletyn Informacji Publicznej</span></a>
+      <a href="images/nowe-pracownie/index.html"><strong>Pracownie</strong><span>Poznaj nasze zaplecze</span></a>
+    </nav>
+  </div>
+</section>
+
+<script>
+  (function () {
+    var archive = document.getElementById('newsArchive');
+    var content = document.querySelector('.content-area');
+    var header = document.querySelector('.section-header');
+    if (!archive || !content || !header) return;
+    var articles = Array.prototype.slice.call(content.querySelectorAll('.article-card'));
+    var quickLists = content.querySelector('.dual-module-grid');
+    var buttons = Array.prototype.slice.call(document.querySelectorAll('[data-news-page]'));
+    var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var pages = {
+      2: [
+        ['Wyjście z klasą do Wrocławia', 'Wycieczki i edukacja'],
+        ['Pierwszoklasiści w Książu', 'Integracja uczniów'],
+        ['Europejskie Forum Młodzieży w Polanicy-Zdroju', 'Współpraca międzynarodowa'],
+        ['Elektrycy w Zgorzelcu', 'Kształcenie zawodowe'],
+        ['Święto Odzyskania przez Polskę Niepodległości', 'Uroczystości szkolne'],
+        ['Smaki Europy w NST', 'Projekty europejskie'],
+        ['Parada Erasmusa w Noworudzkiej Szkole Technicznej', 'Erasmus Days']
+      ],
+      3: [
+        ['Uczniowie Noworudzkiej Szkoły Technicznej podbijają Azję!', 'Podróże i doświadczenia'],
+        ['Europejski Dzień Języków Obcych w NST', 'Języki i kultura'],
+        ['Na jeden dzień do Krakowa', 'Wycieczki szkolne'],
+        ['Nowa odsłona strefy relaksu w NST', 'Dobrostan uczniów'],
+        ['Integracyjna wyprawa klasy 4b na Górę św. Anny', 'Integracja'],
+        ['Nauczyciele i pracownicy NST — wakacje pełne nauki i inspiracji', 'Rozwój kadry'],
+        ['Narodowe Czytanie w NST', 'Kultura i literatura']
+      ]
+    };
+    function renderArchive(page) {
+      archive.innerHTML = '';
+      var intro = document.createElement('div'); intro.className = 'archive-intro';
+      intro.innerHTML = '<span>Archiwum aktualności</span><h3>Wydarzenia — strona ' + page + '</h3><p>Wybierz wpis z poniższej listy. Pełne relacje są sukcesywnie przenoszone do nowej wersji serwisu.</p>';
+      var grid = document.createElement('div'); grid.className = 'archive-grid';
+      pages[page].forEach(function (item, index) {
+        var card = document.createElement('article'); card.className = 'archive-card';
+        card.innerHTML = '<span>' + item[1] + '</span><h4>' + item[0] + '</h4><p>Archiwalna aktualność nr ' + (index + 1) + '.</p>';
+        grid.appendChild(card);
+      });
+      archive.appendChild(intro); archive.appendChild(grid);
+    }
+    function setPage(page, shouldScroll) {
+      var isHome = page === 1;
+      articles.forEach(function (article) { article.hidden = !isHome; });
+      if (quickLists) quickLists.hidden = !isHome;
+      archive.hidden = isHome;
+      content.classList.toggle('archive-mode', !isHome);
+      if (!isHome) renderArchive(page);
+      buttons.forEach(function (button) {
+        var active = Number(button.getAttribute('data-news-page')) === page;
+        button.classList.toggle('active', active);
+        if (active) button.setAttribute('aria-current', 'page'); else button.removeAttribute('aria-current');
+      });
+      if (history.replaceState) history.replaceState(null, '', page === 1 ? '#aktualnosci' : '#aktualnosci-' + page);
+      if (shouldScroll) header.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
+    }
+    buttons.forEach(function (button) { button.addEventListener('click', function () { setPage(Number(button.getAttribute('data-news-page')), true); }); });
+    var match = window.location.hash.match(/^#aktualnosci-([23])$/);
+    if (match) setPage(Number(match[1]), false);
+  }());
+</script>
+<script>
+  (function () {
+    var cards = document.querySelectorAll('.sidebar-card');
+    cards.forEach(function (card, i) {
+      var head = card.querySelector('.sidebar-header');
+      if (!head) return;
+      head.setAttribute('role', 'button');
+      head.setAttribute('tabindex', '0');
+      if (i >= 3) card.classList.add('collapsed');
+      function toggle() { card.classList.toggle('collapsed'); }
+      head.addEventListener('click', toggle);
+      head.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+    });
+  }());
+</script>
+</body>
+</html>
